@@ -12,14 +12,27 @@ import 'package:flutter/widgets.dart';
 class $AssetsImgGen {
   const $AssetsImgGen();
 
+  /// File path: assets/img/facebook.png
+  AssetGenImage get facebook => const AssetGenImage('assets/img/facebook.png');
+
+  /// File path: assets/img/google.png
+  AssetGenImage get google => const AssetGenImage('assets/img/google.png');
+
   /// File path: assets/img/onboard1.png
   AssetGenImage get onboard1 => const AssetGenImage('assets/img/onboard1.png');
+
+  /// File path: assets/img/onboard2.png
+  AssetGenImage get onboard2 => const AssetGenImage('assets/img/onboard2.png');
+
+  /// File path: assets/img/onboard3.png
+  AssetGenImage get onboard3 => const AssetGenImage('assets/img/onboard3.png');
 
   /// File path: assets/img/splash.png
   AssetGenImage get splash => const AssetGenImage('assets/img/splash.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [onboard1, splash];
+  List<AssetGenImage> get values =>
+      [facebook, google, onboard1, onboard2, onboard3, splash];
 }
 
 class Assets {
