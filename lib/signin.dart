@@ -1,4 +1,5 @@
 import 'package:event_book_app/gen/assets.gen.dart';
+
 import 'package:event_book_app/signup.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -122,7 +123,7 @@ class _SigninScreenState extends State<SigninScreen> {
           children: [
             Padding(
               padding: const EdgeInsets.only(left: 15),
-              child: Container(
+              child: SizedBox(
                 height: 30,
                 width: 170,
                 child: Row(
@@ -139,7 +140,7 @@ class _SigninScreenState extends State<SigninScreen> {
                     const SizedBox(
                       width: 5,
                     ),
-                    Text('Remember Me '),
+                    const Text('Remember Me '),
                   ],
                 ),
               ),
@@ -148,7 +149,7 @@ class _SigninScreenState extends State<SigninScreen> {
                 onPressed: () {
                   showsnac(context, 'for reset password call programmer');
                 },
-                child: Text('Forgot Password ?'))
+                child: const Text('Forgot Password ?'))
           ],
         ),
         Padding(
@@ -182,7 +183,7 @@ class _SigninScreenState extends State<SigninScreen> {
                     onPressed: () {
                         Navigator.of(context).push(CupertinoPageRoute(builder: (context) => SignupScreen(),));
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       CupertinoIcons.arrow_right,
                       color: Colors.white,
                     ),
@@ -192,7 +193,7 @@ class _SigninScreenState extends State<SigninScreen> {
         ),
         Container(
             alignment: Alignment.center,
-            child: Text(
+            child: const Text(
               'OR',
               style: TextStyle(color: Colors.grey, fontSize: 16),
             )),
@@ -209,12 +210,12 @@ class _SigninScreenState extends State<SigninScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
+                SizedBox(
                     height: 40,
                     width: 30,
                     child: Assets.img.google.image()),
-                Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
+                const Padding(
+                  padding: EdgeInsets.only(left: 8.0),
                   child: Text('Login with Google'),
                 )
               ],
@@ -234,12 +235,12 @@ class _SigninScreenState extends State<SigninScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
+                SizedBox(
                     height: 40,
                     width: 30,
                     child: Assets.img.facebook.image()),
-                Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
+                const Padding(
+                  padding: EdgeInsets.only(left: 8.0),
                   child: Text('Login with Facebook'),
                 ),
               ],
@@ -249,10 +250,15 @@ class _SigninScreenState extends State<SigninScreen> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Already have an account?'),
+            const Text('Dont have an account '),
             TextButton(
-              onPressed: () {},
-              child: Text('Sign in'),
+              onPressed: () {
+                setState(() {
+                    Navigator.of(context).pushReplacement(CupertinoPageRoute(builder: (context) =>  const SignupScreen(),));
+                });
+              
+              },
+              child: const Text('Sign in'),
             ),
           ],
         )
@@ -266,7 +272,7 @@ class _SigninScreenState extends State<SigninScreen> {
 String? showsnac(BuildContext context, message) {
   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
     content: Text(message),
-    duration: Duration(milliseconds: 900),
+    duration: const Duration(milliseconds: 900),
     backgroundColor: Colors.blue.shade700,
   ));
 }

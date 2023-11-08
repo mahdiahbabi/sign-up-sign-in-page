@@ -315,7 +315,11 @@ class _SignupScreenState extends State<SignupScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text('Already have an account?'),
-            TextButton(onPressed: (){}, child: const Text('Sign in'),),
+            TextButton(onPressed: (){
+              setState(() {
+                  Navigator.of(context).pushReplacement(CupertinoPageRoute(builder: (context) =>  const SignupScreen(),));
+              });
+            }, child: const Text('Sign in'),),
           ],
                   )
                 ],
